@@ -44,7 +44,7 @@ int pop() {
         stack *temp = top;
         int num = temp->data;
         top = top->link;
-        free(temp);+
+        free(temp);
         return num;
     }
 }

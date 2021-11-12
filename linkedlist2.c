@@ -45,8 +45,17 @@ void display(NODE *phead) {
         p = p->next;
     }
     printf("]\n");
-
 }
+
+NODE *search(NODE *head,int n) {
+    NODE *p = head;
+    while(p != NULL) {
+        if(p->data == n) return p;
+        p = p->next;
+    }
+    return p;
+}
+
 
 int main(void) {
     NODE *head = malloc(sizeof(NODE));
@@ -72,6 +81,9 @@ int main(void) {
 
     remove_node(&head, node2, node3);
     display(head);
+
+    printf("%p\n",search(head,100));
+    printf("%p\n",search(head,200));
 
 
     

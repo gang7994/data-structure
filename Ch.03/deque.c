@@ -22,18 +22,11 @@ int main(void) {
     NODE *dq = NULL;
     display(&dq);
 
-    add_front(&dq, 10);
-    add_front(&dq, 20);
-    add_front(&dq, 30);
+    add_rear(&dq, 10);
     display(&dq);
-    add_rear(&dq, 1);
-    display(&dq);
+    
     delete_front(&dq);
     display(&dq);
-    delete_rear(&dq);
-    display(&dq);
-    
-    
 }
 
 
@@ -42,6 +35,7 @@ NODE *makenode(int n) {
     newnode->data = n;
     newnode->llink = NULL;
     newnode->rlink = NULL;
+    return newnode;
 }
 
 void add_front(NODE **dq, int data) {
@@ -72,7 +66,12 @@ int delete_front(NODE **dq) {
     }
     else {
         NODE *temp = *dq;
-        *dq = temp->rlink;
+        if(temp->rlink !=NULL) {
+            *dq = temp->rlink;
+            NODE *h = *dq;
+            h->llink =NULL;
+        }
+        else *dq = NULL;
         int data = temp->data;
         free(temp);
         return data;

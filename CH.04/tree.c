@@ -41,6 +41,7 @@ int main() {
     TreeNode *n7 = malloc(sizeof(TreeNode));
     TreeNode *n8 = malloc(sizeof(TreeNode));
     TreeNode *n9 = malloc(sizeof(TreeNode));
+    
     n1->data = 'F';
     n1->left = n2;
     n1->right = n3;

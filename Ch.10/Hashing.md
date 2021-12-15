@@ -46,3 +46,45 @@ Hashing(해싱)
     ![예시](https://t1.daumcdn.net/cfile/tistory/99A2C3385A77B55128 "중간제곱함수")
 
 
+</br></br>
+
+## 충돌(Collision)
+
+- **정의**
+    * 서로 다른 탐색 키를 갖는 항목들이 같은 해시 주소를 가지는 현상
+    * 충돌이 발생하면 해시 테이블에 항목 저장 불가능
+    * 충돌을 효과적으로 해결하는 방법 반드시 필요
+
+- **해결책**
+    * 선형조사법 : 충돌이 일어난 항목을 해시 테이블의 다른 위치에 저장
+    * 체이닝 :  각 버켓에 삽입과 삭제가 용이한 연결리스트 할당
+
+</br></br>
+
+## 선형조사법(Linear Prbing)
+
+- 충돌이 ht[k]에서 발생한 경우
+    > ht[k+1]이 비어 있는지 조사
+    > 만약 비어있지 안으면 ht[k+2] 조사
+    > 비어있는 공간이 나올때 까지 계속해서 조사
+    > 테이블 끝에 도달하면 처음부터 조사
+    > 원래 자리로 되돌아 오면 테이블이 가득 찬 것
+![예시](https://mblogthumb-phinf.pstatic.net/MjAxNzAxMTRfMjIx/MDAxNDg0MzU1NjE4MDI3.uBSCeSxk_R1vfYH-AeT1vsqXkpOYitH3Y1_KQygjtxYg.A8WG7Fb6vEIOX-U9LKAIpUAXF17UTiUusc_bvArH5fAg.PNG.591923/%EC%BA%A1%EC%B2%98.PNG?type=w2 "선형조사법")
+
+
+</br></br>
+
+## 이차 조사법(Quadratic Probing)
+
+- 선형 조사법과 유사하나 다음 조사할 위치를 아래식 사용
+    > ($h(k)$ + inc $*$ inc) mod $M$
+- 조사되는 위치는 h(k),h(k)+1,h(k)+4
+
+</br></br>
+
+## 체이닝(Chaining)
+
+- 오버플로우 문제를 연결리스트로 해결
+![예시](https://t1.daumcdn.net/cfile/tistory/273BBA4453A0179F24 "체이닝")
+
+https://likeapple.tistory.com/2?category=688235
